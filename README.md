@@ -54,18 +54,25 @@ Once deployed, you can access the following services by port-forwarding them:
   ```bash
   kubectl port-forward --address 0.0.0.0 service/prometheus 9090:80 -n prometheus
   ```
+  ![2](https://github.com/yogendra-kokamkar/kubernetes-cluster-monitoring/assets/55878086/d907680a-ed13-4f3c-96dd-5b9e5e5fe949)
+
 - **Node Exporter Server**: Accessible at `http://your-public-ip:9100`.
 
   To port forward Node Exporter:
   ```bash
   kubectl port-forward --address 0.0.0.0 service/node-exporter 9100:9100 -n prometheus
   ```
+  ![3](https://github.com/yogendra-kokamkar/kubernetes-cluster-monitoring/assets/55878086/ce56322d-6b6b-4496-94ea-3459b040570c)
+  ![4](https://github.com/yogendra-kokamkar/kubernetes-cluster-monitoring/assets/55878086/d2c482c3-3f7a-45ad-bbe1-26f58a3366a5)
+
+ 
 - **Grafana Server**: Accessible at `http://your-public-ip:3000`.
 
   To port forward Grafane:
   ```bash
   kubectl port-forward --address 0.0.0.0 service/grafana 3000:80
   ```
+  ![1](https://github.com/yogendra-kokamkar/kubernetes-cluster-monitoring/assets/55878086/2a46cba6-29d1-47a8-9975-7495b29b88ef)
 ## Contributing
 Contributions to this repository are welcome! If you have suggestions, improvements, or additional content to add, please open an issue or submit a pull request.
 
