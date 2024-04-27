@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-exporter
+  namespace: prometheus  # Assuming the DaemonSet pods are in the monitoring namespace
+spec:
+  selector:
+    app: prometheus-node-exporter  # Match the labels of the DaemonSet pods
+  ports:
+    - protocol: TCP
+      port: 9100  # Port exposed by the Node Exporter
+      targetPort: 9100  # Port that the containers accept traffic on

@@ -1,0 +1,11 @@
+groups:
+- name: CPU Usage
+  rules:
+  - alert: HighCPUUsage
+    expr: 100 * (1 - avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m]))) > 85
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "High CPU Usage Detected"
+      description: "The CPU usage on one of the nodes is above 85% for more than 5 minutes."

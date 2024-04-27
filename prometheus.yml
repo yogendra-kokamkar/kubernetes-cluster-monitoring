@@ -1,0 +1,19 @@
+global:
+  scrape_interval:     15s  # Scrape targets every 15 seconds
+  evaluation_interval: 15s  # Evaluate rules every 15 seconds
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']  # Self-monitoring Prometheus
+
+  - job_name: 'node-exporter'
+    metrics_path: /metrics
+    scheme: http
+    static_configs:
+      - targets: ['20.121.117.62:9100']
+        labels:
+          group: 'production'
+
+rule_files:
+  - 'alert.rules.yml'
