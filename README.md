@@ -55,11 +55,13 @@ Once deployed, you can access the following services by port-forwarding them:
   kubectl port-forward --address 0.0.0.0 service/prometheus 9090:80 -n prometheus
   ```
 - **Node Exporter Server**: Accessible at `http://your-public-ip:9100`.
+
   To port forward Node Exporter:
   ```bash
   kubectl port-forward --address 0.0.0.0 service/node-exporter 9100:9100 -n prometheus
   ```
 - **Grafana Server**: Accessible at `http://your-public-ip:3000`.
+
   To port forward Grafane:
   ```bash
   kubectl port-forward --address 0.0.0.0 service/grafana 3000:80
